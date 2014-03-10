@@ -83,7 +83,7 @@ namespace Xamarin.Auth
 			//
 			var authorization = GetAuthorizationHeader ();
 
-			req.Headers [HttpRequestHeader.Authorization] = authorization;
+			req.Headers.Add ("Authorization", authorization);
 
 			return base.GetResponseAsync (cancellationToken);
 		}

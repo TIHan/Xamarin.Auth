@@ -17,7 +17,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Net;
+#if WINDOWS_PHONE
+#else
 using System.Runtime.Serialization.Formatters.Binary;
+#endif
 using System.IO;
 
 namespace Xamarin.Auth
@@ -173,19 +176,27 @@ namespace Xamarin.Auth
 
 		string SerializeCookies ()
 		{
+#if WINDOWS_PHONE
+            return "";
+#else
 			var f = new BinaryFormatter ();
 			using (var s = new MemoryStream ()) {
 				f.Serialize (s, Cookies);
 				return Convert.ToBase64String (s.GetBuffer (), 0, (int)s.Length);
 			}
+#endif
 		}
 
 		static CookieContainer DeserializeCookies (string cookiesString)
 		{
+#if WINDOWS_PHONE
+            return new CookieContainer();
+#else
 			var f = new BinaryFormatter ();
 			using (var s = new MemoryStream (Convert.FromBase64String (cookiesString))) {
 				return (CookieContainer)f.Deserialize (s);
 			}
+#endif
 		}
 
 		/// <summary>

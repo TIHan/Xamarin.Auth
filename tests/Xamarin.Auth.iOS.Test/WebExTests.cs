@@ -12,7 +12,7 @@ namespace Xamarin.Auth.Test
 	{
 		[TestCase ("{\"string\": \"value\"}","string", "value")]
 		[TestCase ("{\"int\": 5000}", "int", "5000")]
-		[TestCase ("{\"bool\": true }", "bool", "true")]
+		[TestCase ("{\"bool\": true }", "bool", "True")]
 		public void JsonDecode (string json, string arg, string value)
 		{
 			var dict = WebEx.JsonDecode (json);

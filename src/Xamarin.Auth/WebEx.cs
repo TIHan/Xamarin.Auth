@@ -21,7 +21,8 @@ using System.Text;
 using System.IO;
 using System.Linq;
 using System.Globalization;
-using System.Json;
+
+using Newtonsoft.Json;
 
 namespace Xamarin.Utilities
 {
@@ -92,20 +93,7 @@ namespace Xamarin.Utilities
 
 		public static Dictionary<string, string> JsonDecode (string encodedString)
 		{
-			var inputs = new Dictionary<string, string> ();
-			var json = JsonValue.Parse (encodedString) as JsonObject;
-
-			foreach (var kv in json) {
-				var v = kv.Value as JsonValue;
-				if (v != null) {
-					if (v.JsonType != JsonType.String)
-						inputs[kv.Key] = v.ToString();
-					else
-						inputs[kv.Key] = (string)v;
-				}
-			}
-
-			return inputs;
+            return JsonConvert.DeserializeObject<Dictionary<string, string>> (encodedString);
 		}
 
 		public static string HtmlEncode (string text)

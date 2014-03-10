@@ -14,13 +14,18 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
+	<array/>
 	<key>MinimumOSVersion</key>
-	<string>3.2</string>
+	<string></string>
+	<key>CFBundleDisplayName</key>
+	<string>Xamarin.Auth.iOS.Test</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.xamarin.auith.ios.test</string>
+	<key>CFBundleVersion</key>
+	<string></string>
+	<key>NSMainNibFile</key>
+	<string></string>
+	<key>NSMainNibFile~ipad</key>
+	<string></string>
 </dict>
 </plist>
